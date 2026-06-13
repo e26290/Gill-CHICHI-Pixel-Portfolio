@@ -1,0 +1,112 @@
+/* ============================================================
+   Onwards Pixel Portfolio — global styles
+   Palette: paper #F5F1E8 · ink #1F1A12 · amber #D4A248 · pink #E89BA0
+   ============================================================ */
+
+:root {
+  --paper: #f5f1e8;
+  --ink: #1f1a12;
+  --amber: #d4a248;
+  --amber-deep: #a87c2c;
+  --pink: #e89ba0;
+  --white: #ffffff;
+  --shadow: rgba(31, 26, 18, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+body {
+  font-family: 'Courier New', 'Noto Sans Mono CJK TC', monospace;
+  font-weight: 700;
+  color: var(--ink);
+  -webkit-font-smoothing: none;
+  user-select: none;
+}
+
+canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ---------- pixel button ---------- */
+.px-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+  background: var(--paper);
+  color: var(--ink);
+  border: none;
+  padding: 7px 14px 8px;
+  cursor: pointer;
+  position: relative;
+  box-shadow:
+    0 -3px 0 0 var(--ink),
+    0 3px 0 0 var(--ink),
+    -3px 0 0 0 var(--ink),
+    3px 0 0 0 var(--ink),
+    4px 5px 0 0 var(--shadow);
+  transition: transform 0.05s steps(1);
+  white-space: nowrap;
+}
+
+.px-btn:hover {
+  background: var(--white);
+}
+
+.px-btn:active,
+.px-btn.is-active {
+  background: var(--amber);
+  color: var(--ink);
+  transform: translate(2px, 2px);
+  box-shadow:
+    0 -3px 0 0 var(--ink),
+    0 3px 0 0 var(--ink),
+    -3px 0 0 0 var(--ink),
+    3px 0 0 0 var(--ink);
+}
+
+.px-btn:focus-visible {
+  outline: 3px dashed var(--amber);
+  outline-offset: 4px;
+}
+
+/* ---------- pixel panel ---------- */
+.px-panel {
+  background: var(--paper);
+  box-shadow:
+    0 -4px 0 0 var(--ink),
+    0 4px 0 0 var(--ink),
+    -4px 0 0 0 var(--ink),
+    4px 0 0 0 var(--ink),
+    0 -8px 0 0 var(--paper),
+    0 8px 0 0 var(--paper),
+    -8px 0 0 0 var(--paper),
+    8px 0 0 0 var(--paper),
+    0 -11px 0 0 var(--ink),
+    0 11px 0 0 var(--ink),
+    -11px 0 0 0 var(--ink),
+    11px 0 0 0 var(--ink),
+    10px 14px 0 0 var(--shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
